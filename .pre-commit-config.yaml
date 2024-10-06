@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=https://json.schemastore.org/pre-commit-config.json
+
+repos:
+    - repo: local
+      hooks:
+          - id: terraform-docs-recursive
+            name: terraform-docs-recursive
+            description: Recursively Generate documentation for Terraform modules (via Go binary)
+            language: golang
+            entry: terraform-docs-recursive pre-commit
+            pass_filenames: true
+            require_serial: true
+            types: [terraform]
+
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v4.5.0
+      hooks:
+          - id: trailing-whitespace
+          - id: end-of-file-fixer
+          - id: check-yaml
+          - id: check-ast
+          - id: check-docstring-first
+          - id: check-merge-conflict
+          - id: mixed-line-ending
+
+    - repo: https://github.com/pre-commit/mirrors-prettier
+      rev: v3.1.0
+      hooks:
+          - id: prettier
+            args: [--print-width=88, --tab-width=4]
+            exclude: ^modules/.*README.md$
+
+    - repo: https://github.com/dnephin/pre-commit-golang
+      rev: v0.5.1
+      hooks:
+          - id: go-fmt
+          - id: go-vet
+          - id: go-mod-tidy

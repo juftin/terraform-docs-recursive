@@ -1,0 +1,23 @@
+name: terraform-docs-recursive
+description: GitHub composite workflow to setup and run terraform-docs-recursive
+
+inputs:
+    directory:
+        description: Directory to run terraform-docs-recursive
+        default: "${{ github.workspace }}"
+
+runs:
+    using: composite
+    steps:
+        - name: Set up Go
+          uses: actions/setup-go@v5
+          with:
+              go-version: ${{ env.GOVERSION || '1.23' }}
+        - name: Install terraform-docs-recursive
+          run: |
+              go install ${{ github.action_path }}
+          shell: bash
+        - name: Run terraform-docs-recursive
+          run: |
+              terraform-docs-recursive docs ${{ inputs.directory }}
+          shell: bash

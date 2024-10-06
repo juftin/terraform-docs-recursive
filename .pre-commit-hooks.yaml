@@ -1,0 +1,11 @@
+---
+# Build and run the Go binary from the repo
+# REQUIRES: Go v1.16+ installed
+- id: terraform-docs-recursive
+  name: terraform-docs-recursive
+  description: Recursively Generate documentation for Terraform modules (via Go binary)
+  language: golang
+  entry: terraform-docs-recursive pre-commit
+  pass_filenames: true
+  require_serial: true
+  types: [terraform]

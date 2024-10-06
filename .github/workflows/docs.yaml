@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+name: Docs
+on:
+    push:
+
+jobs:
+    docs:
+        name: docs-test
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v4
+            - name: Generate Terraform Docs
+              uses: ./
+            - name: Raise an Error if Changes
+              run: |
+                  diff="$(git diff HEAD)"
+                  echo "${diff}"
+                  if [ -n "${diff}" ]; then
+                    echo "Changes detected in Terraform Docs"
+                    exit 1
+                  fi
