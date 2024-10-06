@@ -31,7 +31,7 @@ brew install terraform-docs-recursive
 #### Install with Go
 
 ```bash
-go install github.com/juftin/terraform-docs-recursive@v1.0.0
+go install github.com/juftin/terraform-docs-recursive@v1.6.0
 ```
 
 ### Pre-Commit Hook
@@ -42,7 +42,7 @@ you can add the following to your `.pre-commit-config.yaml`:
 ```yaml
 repos:
     - repo: https://github.com/juftin/terraform-docs-recursive
-      rev: v1.0.0
+      rev: v1.6.0
       hooks:
           - id: terraform-docs-recursive
 ```
