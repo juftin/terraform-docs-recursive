@@ -5,21 +5,21 @@
 class TerraformDocsRecursive < Formula
   desc "Generate Terraform Docs for all Terraform Modules in a Directory"
   homepage "https://github.com/juftin/terraform-docs-recursive"
-  version "1.0.0"
+  version "1.6.0"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/juftin/terraform-docs-recursive/releases/download/v1.0.0/terraform-docs-recursive_Darwin_x86_64.tar.gz"
-      sha256 "9324582743a0b703b8b6963dab540313c7aaea83340bc6b8841eed95ef2c8d07"
+      url "https://github.com/juftin/terraform-docs-recursive/releases/download/v1.6.0/terraform-docs-recursive_Darwin_x86_64.tar.gz"
+      sha256 "e68e02855e1fc2ccab88e371c74b921ba7e5ec9c85760630148868d614b1f365"
 
       def install
         bin.install "terraform-docs-recursive"
       end
     end
     on_arm do
-      url "https://github.com/juftin/terraform-docs-recursive/releases/download/v1.0.0/terraform-docs-recursive_Darwin_arm64.tar.gz"
-      sha256 "d38d54b84222dc7b926aa9e22b0e4c34bc41fa050856fd40c366b9b4625a49cb"
+      url "https://github.com/juftin/terraform-docs-recursive/releases/download/v1.6.0/terraform-docs-recursive_Darwin_arm64.tar.gz"
+      sha256 "32c6695cfb73cc3ba8ebfd93a30a9a9705e758ad648fae77bc623ed2078a3840"
 
       def install
         bin.install "terraform-docs-recursive"
@@ -30,8 +30,8 @@ class TerraformDocsRecursive < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/juftin/terraform-docs-recursive/releases/download/v1.0.0/terraform-docs-recursive_Linux_x86_64.tar.gz"
-        sha256 "3d04c28069ba2d43b7ac2086104ab4a63352f74b58c09be2d9c60a4b4e2c53cc"
+        url "https://github.com/juftin/terraform-docs-recursive/releases/download/v1.6.0/terraform-docs-recursive_Linux_x86_64.tar.gz"
+        sha256 "ec5c0a1a453254f4c24e95f66caf15f98ae751169952b828a64e798e3835d544"
 
         def install
           bin.install "terraform-docs-recursive"
@@ -40,8 +40,8 @@ class TerraformDocsRecursive < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/juftin/terraform-docs-recursive/releases/download/v1.0.0/terraform-docs-recursive_Linux_arm64.tar.gz"
-        sha256 "731e2677bedbcf026a26bad59097e6b242bfdd5fb56faface04241101735bc2d"
+        url "https://github.com/juftin/terraform-docs-recursive/releases/download/v1.6.0/terraform-docs-recursive_Linux_arm64.tar.gz"
+        sha256 "9a5155434c6c635d194c409f3c51994c5f8f6e98460f2898e3aab01d89dc8e57"
 
         def install
           bin.install "terraform-docs-recursive"
