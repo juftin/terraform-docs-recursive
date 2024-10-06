@@ -11,7 +11,7 @@ This project is a wrapper around [terraform-docs](https://github.com/terraform-d
 with logic to recursively find and generate documentation for all modules in a directory. In order for
 a module to be considered for documentation, its directory (or any of its parent directories)
 must contain a [terraform-docs configuration file](https://terraform-docs.io/user-guide/configuration/).
-`terraform-docs-recursive` will search use whichever configuration file is found first in the directory tree.
+`terraform-docs-recursive` will use whichever configuration file is found first in the directory tree.
 
 ## Usage
 
